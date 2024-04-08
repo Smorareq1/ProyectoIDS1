@@ -1,54 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Blog</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>ecoLife - Blog de estilo de vida ecológico</title>
+    <!-- Enlace al archivo CSS de Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Enlace al archivo CSS personalizado -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<header>
-    <h1>Mi Blog</h1>
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Artículos</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
+
+<!-- Navbar -->
+<nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Offcanvas navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- Header -->
+<header class="bg-dark py-5 text-center text-white">
+    <div class="container">
+        <h1 class="display-4">ecoLife</h1>
+        <p class="lead">Explora un estilo de vida más ecológico y sostenible</p>
+        <form>
+            <input type="text" class="form-control form-control-dark" placeholder="Nombre">
+        </form>
+        <p class="text-small">Texto de tamaño pequeño</p>
+        <a href="#" class="btn btn-primary btn-lg">Leer más</a>
+    </div>
 </header>
 
-<main>
-    <article id="articulo1">
-        <h2>Nuevas fuentes de Reciclaje</h2>
-        <p>Contenido resumido del artículo...</p>
-        <a href="#" onclick="mostrarContenido('articulo1')">Leer más</a>
-    </article>
 
-    <article id="articulo2">
-        <h2>Reciclaje de Plásticos</h2>
-        <p>Contenido resumido del artículo...</p>
-        <a href="#" onclick="mostrarContenido('articulo2')">Leer más</a>
-    </article>
 
-    <article id="articulo3">
-        <h2>Reciclaje de Papel</h2>
-        <p>Contenido resumido del artículo...</p>
-        <a href="#" onclick="mostrarContenido('articulo3')">Leer más</a>
-    </article>
+<!-- Contenido principal -->
+<div class="container mt-4">
+    <div class="row">
+        <!-- Ejemplo de tarjeta de post -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="img/post-image.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Título del Post</h5>
+                    <p class="card-text">Breve descripción del post.</p>
+                    <a href="post.html" class="btn btn-primary">Leer más</a>
+                </div>
+            </div>
+        </div>
+        <!-- Repite esta tarjeta para otros posts -->
+    </div>
+</div>
 
-    <article>
-        <h2>Otro Artículo</h2>
-        <p>Contenido del otro artículo...</p>
-        <a href="#">Leer más</a>
-    </article>
-</main>
-
-<footer>
-    <p>&copy; 2024 Mi Blog. Todos los derechos reservados.</p>
-</footer>
-
-<script src="script.js"></script>
+<!-- Scripts al final del body para mejorar rendimiento -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
