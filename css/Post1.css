@@ -1,0 +1,12 @@
+/* Estilos para centrar la imagen */
+.post1-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos para el contenido del post */
+.post-content {
+    margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+    margin-bottom: 20px; /* Ajusta el margen inferior según tus necesidades */
+}

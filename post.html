@@ -3,16 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título del Post - ecoLife</title>
-    <!-- Enlace al archivo CSS de Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Título del Post - EcoLife</title>
+    <!-- BootStrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- BootStrap CSS END -->
     <!-- Enlace al archivo CSS personalizado -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/Post1.css" rel="stylesheet">
 </head>
+
+
 <body>
 <!-- Navbar (reutiliza el mismo navbar del index.html) -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Contenido del navbar -->
+<nav class="navbar navbar-expand-navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">EcoLife</a>  <!-- Cambia el href a index.html para regresar al inicio -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
 <!-- Contenido del post -->
@@ -20,17 +50,30 @@
     <div class="row">
         <div class="col-md-8">
             <h2>Título del Post</h2>
-            <p>Autor del post | Fecha de publicación pene</p>
-            <img src="img/post-image.jpg" class="img-fluid" alt="Imagen del post">
-            <p>Contenido completo del post.</p>
+            <p>EcoLovers | Importancia del reciclaje | 7/04/2024</p>
+            <img src="img/post1-image.jpeg" class="img-fluid post1-image" alt="Imagen del post">
+            <p class="post-content">En Guatemala, al igual que en muchos otros países del mundo, el reciclaje se ha convertido en una herramienta vital para abordar los desafíos ambientales y sociales
+                que enfrentamos en la actualidad. Desde la gestión adecuada de los residuos hasta la conservación de recursos naturales, el reciclaje desempeña un papel fundamental en la
+                construcción de un futuro sostenible para las generaciones venideras.<br><br>
+
+                1. Reducción de la Contaminación Ambiental<br>
+                Uno de los beneficios más evidentes del reciclaje en Guatemala es la reducción de la contaminación ambiental. Al reciclar materiales como plástico, papel, vidrio y metal,
+                se evita que estos elementos terminen en vertederos o en la naturaleza, donde pueden tardar cientos de años en descomponerse y causar daños irreversibles al
+                medio ambiente y a la fauna local.
+
+            </p>
             <hr>
+            Espera más contenido interesante en nuestro próximo post.
             <!-- Agrega sección de comentarios si es necesario -->
         </div>
     </div>
 </div>
 
-<!-- Scripts al final del body para mejorar rendimiento -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/script.js"></script>
+
+<!Bootstrap Js>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!End Bootstrap Js>
+
 </body>
 </html>
