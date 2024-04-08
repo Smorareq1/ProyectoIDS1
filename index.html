@@ -23,7 +23,7 @@
 <!-- Navbar -->
 <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">EcoLife</a>
+        <a class="navbar-brand" href="index.html">BioWave</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,22 +37,15 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#posts-section">Publicaciones</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Mapa</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mapaSugerencias">Mapa y Sugerencias</a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -63,25 +56,28 @@
 
 
 <!-- Header -->
-<!-- Header -->
+
 <header class="bg-dark py-5 text-center text-white">
     <div class="container">
-        <h1 class="display-4">EcoLife</h1>
+        <h1 class="display-4">BioWave</h1>
         <p class="lead">Explora un estilo de vida más ecológico y sostenible</p>
         <!-- Agrega un id al formulario del header -->
         <form id="headerSearchForm">
-            <input type="text" id="searchInput" class="form-control form-control-dark" placeholder="Buscar">
+            <input type="text" id="searchInput" class="form-control form-control-dark" placeholder="Buscar articulo por Nombre">
             <button type="submit" class="btn btn-header btn-lg">Buscar</button>
         </form>
-        <p class="text-small">Texto de tamaño pequeño</p>
+        <p class="text-small">En BioWave, te ofrecemos una plataforma integral donde encontrarás información valiosa sobre prácticas de reciclaje sostenible. Descubre artículos informativos,
+            consejos prácticos y noticias actualizadas sobre cómo contribuir al cuidado del medio ambiente. Además, nuestra sección de mapas te guiará para encontrar
+            los mejores lugares donde reciclar objetos y ganar dinero mientras ayudas al planeta. Únete a nosotros y forma parte del cambio hacia un futuro más verde y próspero.</p>
     </div>
 </header>
 
 
 
 
+
 <!-- Contenido principal -->
-<div class="container mt-4">
+<div class="container mt-4" id="posts-section">
     <div class="row">
         <!-- Ejemplo de tarjeta de post 1 -->
         <div class="col-md-4 mb-4">
@@ -159,6 +155,77 @@
     </div>
 </div>
 <!-- Contenido principal END -->
+
+<!-- Mapa y Sugerencias -->
+<div class="contact-area" id="mapaSugerencias">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2><span>Mapa</span> y Sugerencias</h2>
+                    <p>Encuentra los lugares más cercanos para reciclar y añade más sugerencias para un estilo de vida más sostenible.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Formulario -->
+                <div class="contact-form">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Correo">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3" placeholder="Descripción"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Mapa -->
+                <div class="map-area">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.075466579135!2d-90.48313229999998!3d14.
+                    594775499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a31955555537%3A0x9c472efd9face66a!2s
+                    Universidad%20Rafael%20Landivar!5e0!3m2!1ses!2sgt!4v1712593807888!5m2!1ses!2sgt"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mapa y Sugerencias END -->
+
+<!-- Footer -->
+<footer class="footer bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Información de contacto</h5>
+                <p>Dirección: 123 Calle, 12Av - Guatemala, Ciudad de Guatemala</p>
+                <p>Teléfono: +123 456 7890</p>
+                <p>Correo electrónico: info@biowave.com</p>
+            </div>
+            <div class="col-md-6">
+                <h5>Enlaces útiles</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Busqueda</a></li>
+                    <li><a href="#posts-section">Publicaciones</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            <p>&copy; 2024 BioWave</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer END -->
 
 
 
