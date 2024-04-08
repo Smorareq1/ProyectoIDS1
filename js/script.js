@@ -17,7 +17,7 @@ form.addEventListener('submit', function(event) {
                 window.location.href = 'post.html'; // Redireccionar al artículo sobre sostenibilidad
                 searchInput.value = '';
                 break;
-            case 'Título del segundo post':
+            case 'Una energia mas saludable':
                 window.location.href = 'post2.html'; // Redireccionar al artículo sobre reciclaje
                 searchInput.value = '';
                 break;
