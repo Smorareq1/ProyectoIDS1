@@ -46,5 +46,93 @@ form.addEventListener('submit', function(event) {
     }
 });
 
-//Otras funciones
+//Filtro de búsqueda en mapa
+// Arreglos de ubicaciones
+const ubicacionesElectronicos = [
+    {
+        latitud: 14.594775,
+        longitud: -90.483132,
+        titulo: 'Ubicacion Electrónicos 1'
+    },
+    {
+        latitud: 14.588308,
+        longitud: -90.553279,
+        titulo: 'Ubicacion Electrónicos 2'
+    }
+    // Agrega más ubicaciones de electrónicos según necesites
+];
+
+const ubicacionesPapel = [
+    {
+        latitud: 14.591234,
+        longitud: -90.482345,
+        titulo: 'Ubicacion Papel 1'
+    },
+    {
+        latitud: 14.587654,
+        longitud: -90.550987,
+        titulo: 'Ubicacion Papel 2'
+    }
+    // Agrega más ubicaciones de papel según necesites
+];
+
+const ubicacionesPlastico = [
+    {
+        latitud: 14.593210,
+        longitud: -90.480987,
+        titulo: 'Ubicacion Plástico 1'
+    },
+    {
+        latitud: 14.586789,
+        longitud: -90.551234,
+        titulo: 'Ubicacion Plástico 2'
+    }
+    // Agrega más ubicaciones de plástico según necesites
+];
+
+// Evento de clic en el botón de búsqueda
+document.getElementById('buscarFiltro').addEventListener('click', function(event) {
+    event.preventDefault(); // Evita la acción por defecto del botón (enviar formulario)
+
+    // Obtener las opciones seleccionadas por el usuario
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    const opcionesSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.id);
+
+    // Limpiar el mapa antes de agregar nuevos marcadores
+    limpiarMapa();
+
+    // Lógica para mostrar ubicaciones en el mapa
+    opcionesSeleccionadas.forEach(opcion => {
+        switch(opcion) {
+            case 'ubicacionElectronica':
+                agregarUbicaciones(ubicacionesElectronicos);
+                break;
+            case 'ubicacionPapel':
+                agregarUbicaciones(ubicacionesPapel);
+                break;
+            case 'ubicacionPlastico':
+                agregarUbicaciones(ubicacionesPlastico);
+                break;
+            default:
+                break;
+        }
+    });
+});
+
+// Función para agregar ubicaciones al mapa
+function agregarUbicaciones(ubicaciones) {
+    const mapa = document.getElementById('mapaGoogle');
+    const urlMapa = mapa.src;
+    ubicaciones.forEach(ubicacion => {
+        const nuevoURL = `${urlMapa}&markers=color:red%7Clabel:${ubicacion.titulo}%7C${ubicacion.latitud},${ubicacion.longitud}`;
+        mapa.src = nuevoURL;
+    });
+}
+
+// Función para limpiar el mapa (quitar todos los marcadores)
+function limpiarMapa() {
+    const mapa = document.getElementById('mapaGoogle');
+    const urlBase = mapa.src.split('&markers=')[0];
+    mapa.src = urlBase;
+}
 

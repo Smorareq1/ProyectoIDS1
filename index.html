@@ -178,19 +178,70 @@
 </div>
 <!-- Contenido principal END -->
 
-<!-- Mapa y Sugerencias -->
+<!-- Mapa y Formulario de Ubicaciones -->
 <div class="contact-area" id="mapaSugerencias">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title">
-                    <h2><span>Mapa</span> y Sugerencias</h2>
-                    <p>Encuentra los lugares más cercanos para reciclar y añade más sugerencias para un estilo de vida más sostenible.</p>
+                    <h2><span>MAPA</span></h2>
                 </div>
             </div>
         </div>
 
         <div class="row">
+            <!-- Formulario de Ubicaciones -->
+            <div class="col-md-6">
+                <div class="card p-4 mi-filtro">
+                    <h3>Selecciona una Ubicación</h3>
+                    <form>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="ubicacionElectronica">
+                            <label class="form-check-label" for="ubicacionElectronica">Reciclaje de Electrónicos</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="ubicacionPapel">
+                            <label class="form-check-label" for="ubicacionPapel">Reciclaje de Papel</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="ubicacionPlastico">
+                            <label class="form-check-label" for="ubicacionPlastico">Reciclaje de Plástico</label>
+                        </div>
+                        <!-- Agrega más opciones según necesites -->
+                        <button type="submit" class="btn btn-primary" id="buscarFiltro">Buscar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div class="col-md-6">
+                <div class="map-area">
+                    <!-- Aquí va el iframe del mapa con un ID -->
+                    <iframe id="mapaGoogle" src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.075375736418!2d-90.48571258898185!3d14.594780677159608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a31955555537%3A0x9c472efd9face66a!2sUniversidad%20Rafael%20Landivar!5e0!3m2!1ses!2sgt!4v1712647261953!5m2!1ses!2sgt"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+
+    </div>
+</div>
+<!-- Mapa y Formulario de Ubicaciones END -->
+
+
+
+
+
+<!-- Sugerencias -->
+<div class="contact-area" id="SugerenciasSolo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2><span>Sugerencias</span> de lugares de reciclaje</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
             <div class="col-md-6">
                 <!-- Formulario -->
                 <div class="contact-form">
@@ -204,23 +255,15 @@
                         <div class="mb-3">
                             <textarea class="form-control" rows="3" placeholder="Descripción"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <!-- Mapa -->
-                <div class="map-area">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.075466579135!2d-90.48313229999998!3d14.
-                    594775499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a31955555537%3A0x9c472efd9face66a!2s
-                    Universidad%20Rafael%20Landivar!5e0!3m2!1ses!2sgt!4v1712593807888!5m2!1ses!2sgt"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Mapa y Sugerencias END -->
+<!-- Sugerencias END -->
+
 
 <!-- Footer -->
 <footer class="footer bg-dark text-white">
@@ -255,6 +298,8 @@
 <!Bootstrap Js>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <!End Bootstrap Js>
 
 <!Mis propios js>
