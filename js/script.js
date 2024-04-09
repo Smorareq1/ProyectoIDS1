@@ -29,6 +29,14 @@ form.addEventListener('submit', function(event) {
                 window.location.href = 'post4.html'; // Redireccionar al artículo sobre reciclaje
                 searchInput.value = '';
                 break;
+            case 'Animales y reciclaje en beneficio del medio ambiente':
+                window.location.href = 'post5.html'; // Redireccionar al artículo sobre reciclaje
+                searchInput.value = '';
+                break;
+            case 'Cultivando un futuro sostenible':
+                window.location.href = 'post6.html'; // Redireccionar al artículo sobre reciclaje
+                searchInput.value = '';
+                break;
             // Agrega más casos según tus necesidades
             default:
                 alert('Artículo no encontrado'); // Mostrar mensaje si el artículo no está definido
