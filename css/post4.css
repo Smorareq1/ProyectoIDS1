@@ -1,0 +1,27 @@
+@media (max-width: 992px) {
+    .navbar-right .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        overflow: hidden;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .navbar-right .navbar-collapse.show {
+        width: 100%; /* Ajusta este valor para cambiar el ancho del menú desplegado */
+    }
+
+    .navbar-right .navbar-collapse .navbar-nav {
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+    }
+}
+h2 {
+    font-weight: bold;
+}
+p {
+    text-align: justify;
+}

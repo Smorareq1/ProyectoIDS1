@@ -25,6 +25,10 @@ form.addEventListener('submit', function(event) {
                 window.location.href = 'post3.html'; // Redireccionar al artículo sobre reciclaje
                 searchInput.value = '';
                 break;
+            case 'Ganar dinero reciclando':
+                window.location.href = 'post4.html'; // Redireccionar al artículo sobre reciclaje
+                searchInput.value = '';
+                break;
             // Agrega más casos según tus necesidades
             default:
                 alert('Artículo no encontrado'); // Mostrar mensaje si el artículo no está definido
