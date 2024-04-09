@@ -10,3 +10,9 @@
     margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
     margin-bottom: 20px; /* Ajusta el margen inferior según tus necesidades */
 }
+h2 {
+    font-weight: bold;
+}
+p {
+    text-align: justify;
+}
