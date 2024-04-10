@@ -66,43 +66,51 @@ const mapasPersonalizados = {
     // Agrega más opciones según sea necesario
 };
 
+/// Almacenar referencias a elementos DOM
+const mapa = document.getElementById('mapaGoogle');
+const opcionesCheckbox = document.querySelectorAll('input[type="checkbox"]');
+
 // Evento de clic en el botón de búsqueda
 document.getElementById('buscarFiltro').addEventListener('click', function(event) {
     event.preventDefault(); // Evita la acción por defecto del botón (enviar formulario)
 
-    // Obtener las opciones seleccionadas por el usuario
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-    const opcionSeleccionada = checkboxes.length > 0 ? checkboxes[0].value : null; // Obtener la primera opción seleccionada
+    // Obtener la opción seleccionada por el usuario
+    const opcionSeleccionada = document.querySelector('input[type="checkbox"]:checked');
 
     // Limpiar el mapa antes de agregar nuevos marcadores
     limpiarMapa();
 
     // Lógica para mostrar ubicaciones en el mapa
     if (opcionSeleccionada) {
-        agregarUbicaciones(mapasPersonalizados[opcionSeleccionada]);
+        agregarUbicaciones(opcionSeleccionada.value);
+    } else {
+        alert('Selecciona una opción para ver la ubicación en el mapa');
     }
 });
 
 // Función para agregar ubicaciones al mapa
-function agregarUbicaciones(mapaPersonalizado) {
-    const mapa = document.getElementById('mapaGoogle');
-    mapa.src = mapaPersonalizado.url;
-    mapa.width = mapaPersonalizado.width;
-    mapa.height = mapaPersonalizado.height;
+function agregarUbicaciones(opcion) {
+    const ubicacion = mapasPersonalizados[opcion];
+    if (ubicacion) {
+        mapa.src = ubicacion.url;
+        mapa.width = ubicacion.width;
+        mapa.height = ubicacion.height;
+    } else {
+        alert('Ubicación no encontrada');
+    }
 }
 
 // Función para limpiar el mapa (quitar todos los marcadores)
 function limpiarMapa() {
-    const mapa = document.getElementById('mapaGoogle');
     mapa.src = ''; // Vacía la URL del mapa
 }
 
-// Desmarcar las otras opciones cuando se selecciona una nueva
-document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+// Evento de cambio en las opciones checkbox
+opcionesCheckbox.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
         if (this.checked) {
-            // Desmarcar las otras opciones
-            document.querySelectorAll('input[type="checkbox"]').forEach(otherCheckbox => {
+            // Limpiar las demás opciones
+            opcionesCheckbox.forEach(otherCheckbox => {
                 if (otherCheckbox !== this) {
                     otherCheckbox.checked = false;
                 }
@@ -110,6 +118,7 @@ document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
         }
     });
 });
+
 
 
 
