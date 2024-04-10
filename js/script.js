@@ -46,34 +46,25 @@ form.addEventListener('submit', function(event) {
     }
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-//Filtro de búsqueda en mapa
-// Arreglos de iframes para cada clase de ubicaciones
-const iframesElectronicos = [
-    {
-        url: 'https://maps.app.goo.gl/9GwAN42XcdbdCnPh8',
+// Mapas personalizados para cada opción
+const mapasPersonalizados = {
+    electronicos: {
+        url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.917643673955!2d-90.49182828898171!3d14.60376717693958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a3a991475f6f%3A0x3ded42e1475475f0!2sUniversidad%20del%20Valle%20de%20Guatemala!5e0!3m2!1ses!2sgt!4v1712725528732!5m2!1ses!2sgt",
         width: 600,
         height: 450
     },
-    // Agrega más iframes según necesites para la clase de electrónicos
-];
-
-const iframesPapel = [
-    {
-        url: 'URL_DEL_MAPA_PAPEL',
+    papel: {
+        url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.5871510860193!2d-90.55444148898145!3d14.622578876478581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a110e16ca3d3%3A0xc69355632110809e!2sMiraflores!5e0!3m2!1ses!2sgt!4v1712726770719!5m2!1ses!2sgt",
         width: 600,
         height: 450
     },
-    // Agrega más iframes según necesites para la clase de papel
-];
-
-const iframesPlastico = [
-    {
-        url: 'URL_DEL_MAPA_PLASTICO',
+    plastico: {
+        url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61769.370622871!2d-90.59315749364247!3d14.62266347220422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a3fe821366b7%3A0xfd632a3b58deb640!2sCiudad%20Cayal%C3%A1!5e0!3m2!1ses!2sgt!4v1712726829641!5m2!1ses!2sgt",
         width: 600,
         height: 450
-    },
-    // Agrega más iframes según necesites para la clase de plástico
-];
+    }
+    // Agrega más opciones según sea necesario
+};
 
 // Evento de clic en el botón de búsqueda
 document.getElementById('buscarFiltro').addEventListener('click', function(event) {
@@ -81,49 +72,46 @@ document.getElementById('buscarFiltro').addEventListener('click', function(event
 
     // Obtener las opciones seleccionadas por el usuario
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-    const opcionesSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
+    const opcionSeleccionada = checkboxes.length > 0 ? checkboxes[0].value : null; // Obtener la primera opción seleccionada
 
     // Limpiar el mapa antes de agregar nuevos marcadores
     limpiarMapa();
 
     // Lógica para mostrar ubicaciones en el mapa
-    opcionesSeleccionadas.forEach(opcion => {
-        switch(opcion) {
-            case 'electronicos':
-                agregarUbicaciones(ubicacionesElectronicos);
-                break;
-            case 'papel':
-                agregarUbicaciones(ubicacionesPapel);
-                break;
-            case 'plastico':
-                agregarUbicaciones(ubicacionesPlastico);
-                break;
-            default:
-                break;
-        }
-    });
+    if (opcionSeleccionada) {
+        agregarUbicaciones(mapasPersonalizados[opcionSeleccionada]);
+    }
 });
 
 // Función para agregar ubicaciones al mapa
-function agregarUbicaciones(ubicaciones) {
+function agregarUbicaciones(mapaPersonalizado) {
     const mapa = document.getElementById('mapaGoogle');
-    const urlMapa = mapa.src;
-    ubicaciones.forEach(ubicacion => {
-        const nuevoURL = `${urlMapa}&markers=color:red%7Clabel:${ubicacion.titulo}%7C${ubicacion.latitud},${ubicacion.longitud}`;
-        mapa.src = nuevoURL;
-    });
+    mapa.src = mapaPersonalizado.url;
+    mapa.width = mapaPersonalizado.width;
+    mapa.height = mapaPersonalizado.height;
 }
 
 // Función para limpiar el mapa (quitar todos los marcadores)
 function limpiarMapa() {
     const mapa = document.getElementById('mapaGoogle');
-    const urlBase = mapa.src.split('&markers=')[0];
-    mapa.src = urlBase;
+    mapa.src = ''; // Vacía la URL del mapa
 }
 
+// Desmarcar las otras opciones cuando se selecciona una nueva
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            // Desmarcar las otras opciones
+            document.querySelectorAll('input[type="checkbox"]').forEach(otherCheckbox => {
+                if (otherCheckbox !== this) {
+                    otherCheckbox.checked = false;
+                }
+            });
+        }
+    });
+});
 
-// Ejemplo de cómo llamar a la función agregarMapas con la clase seleccionada
-// agregarMapas('electronicos'); // Puedes llamar esto al seleccionar la clase de electrónicos, por ejemplo
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //Aviso de envio de formulario
