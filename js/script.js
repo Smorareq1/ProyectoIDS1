@@ -47,47 +47,32 @@ form.addEventListener('submit', function(event) {
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //Filtro de búsqueda en mapa
-// Arreglos de ubicaciones
-const ubicacionesElectronicos = [
+// Arreglos de iframes para cada clase de ubicaciones
+const iframesElectronicos = [
     {
-        latitud: 14.594775,
-        longitud: -90.483132,
-        titulo: 'Ubicacion Electrónicos 1'
+        url: 'https://maps.app.goo.gl/9GwAN42XcdbdCnPh8',
+        width: 600,
+        height: 450
     },
-    {
-        latitud: 14.588308,
-        longitud: -90.553279,
-        titulo: 'Ubicacion Electrónicos 2'
-    }
-    // Agrega más ubicaciones de electrónicos según necesites
+    // Agrega más iframes según necesites para la clase de electrónicos
 ];
 
-const ubicacionesPapel = [
+const iframesPapel = [
     {
-        latitud: 14.591234,
-        longitud: -90.482345,
-        titulo: 'Ubicacion Papel 1'
+        url: 'URL_DEL_MAPA_PAPEL',
+        width: 600,
+        height: 450
     },
-    {
-        latitud: 14.587654,
-        longitud: -90.550987,
-        titulo: 'Ubicacion Papel 2'
-    }
-    // Agrega más ubicaciones de papel según necesites
+    // Agrega más iframes según necesites para la clase de papel
 ];
 
-const ubicacionesPlastico = [
+const iframesPlastico = [
     {
-        latitud: 14.593210,
-        longitud: -90.480987,
-        titulo: 'Ubicacion Plástico 1'
+        url: 'URL_DEL_MAPA_PLASTICO',
+        width: 600,
+        height: 450
     },
-    {
-        latitud: 14.586789,
-        longitud: -90.551234,
-        titulo: 'Ubicacion Plástico 2'
-    }
-    // Agrega más ubicaciones de plástico según necesites
+    // Agrega más iframes según necesites para la clase de plástico
 ];
 
 // Evento de clic en el botón de búsqueda
@@ -96,7 +81,7 @@ document.getElementById('buscarFiltro').addEventListener('click', function(event
 
     // Obtener las opciones seleccionadas por el usuario
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-    const opcionesSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.id);
+    const opcionesSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
 
     // Limpiar el mapa antes de agregar nuevos marcadores
     limpiarMapa();
@@ -104,13 +89,13 @@ document.getElementById('buscarFiltro').addEventListener('click', function(event
     // Lógica para mostrar ubicaciones en el mapa
     opcionesSeleccionadas.forEach(opcion => {
         switch(opcion) {
-            case 'ubicacionElectronica':
+            case 'electronicos':
                 agregarUbicaciones(ubicacionesElectronicos);
                 break;
-            case 'ubicacionPapel':
+            case 'papel':
                 agregarUbicaciones(ubicacionesPapel);
                 break;
-            case 'ubicacionPlastico':
+            case 'plastico':
                 agregarUbicaciones(ubicacionesPlastico);
                 break;
             default:
@@ -135,6 +120,10 @@ function limpiarMapa() {
     const urlBase = mapa.src.split('&markers=')[0];
     mapa.src = urlBase;
 }
+
+
+// Ejemplo de cómo llamar a la función agregarMapas con la clase seleccionada
+// agregarMapas('electronicos'); // Puedes llamar esto al seleccionar la clase de electrónicos, por ejemplo
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //Aviso de envio de formulario
