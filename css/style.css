@@ -58,11 +58,16 @@ header h1 {
 .card-img-top {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    flex-grow: 1; /* Hace que la imagen ocupe todo el espacio disponible verticalmente */
+    height: 200px;
+    object-fit: cover;
 }
 
 .card-body {
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Para que ocupe toda la altura disponible */
 }
 
 .btn-primary {
@@ -77,14 +82,16 @@ header h1 {
 
 /* Estilos para el título de la tarjeta */
 .card-title {
-    margin-top: 10px;
+    margin-top: 0;
     margin-bottom: 10px;
     text-align: center;
+    height: 60px; /* Altura fija para todos los títulos */
 }
 
 /* Estilos para el texto dentro de la tarjeta */
 .card-text {
     text-align: justify;
+    flex-grow: 1; /* Para que ocupe el espacio restante */
 }
 
 /* Estilos para centrar el botón dentro de la tarjeta */
