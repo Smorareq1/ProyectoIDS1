@@ -74,6 +74,7 @@ header h1 {
     border-radius: 50px;
     width: 120px;
     background-color: green;
+    border-color: green;
 }
 
 .btn-primary:hover {

@@ -140,3 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Por ejemplo, puedes enviarla a un servidor mediante una solicitud HTTP (Ajax o Fetch).
     });
 });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
