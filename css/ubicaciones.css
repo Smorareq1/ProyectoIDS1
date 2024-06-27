@@ -20,6 +20,7 @@ ul.filters > li > a{
     color: #333;
     text-decoration: none;
     padding: 5px 20px;
+    border-radius: 12px;
 }
 
 ul.filters > li > a:hover{
@@ -36,16 +37,19 @@ ul.filters > li.active > a{
     position: relative;
     margin-bottom: 50px;
     color: #333;
-    border-radius: 0;
     border : 1px solid white;
     background-color: white;
     box-shadow: 1px 1px 1.5px rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
 
 }
 
 .card-head{
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
+    height: 12vh;
+
 }
 
 .card-overlay{
@@ -83,6 +87,14 @@ ul.filters > li.active > a{
     transition: ease-in-out 0.2s;
 }
 
+.card-hover h4{
+    margin-top: 20px;
+}
+
+.card-hover p{
+    margin-bottom: 20px;
+}
+
 .card-body{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -114,4 +126,62 @@ h5.title{
 .col-lg-4{
     margin-bottom: 50px;
 }
+
+.modal-title {
+    margin: 0 auto;
+}
+
+.modal-header .btn-close {
+    position: absolute;
+    right: 1rem;
+}
+
+
+.modal-body{
+    margin-top: 10px;
+    padding: 0
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Ajusta el espacio entre los iconos */
+    font-size: 1.25rem;
+    overflow: hidden;
+}
+.modal-footer a{
+    text-decoration: none;
+    color: inherit; /* Asegura que el color de los iconos se herede correctamente */
+}
+
+.informacionImportante > li{
+    margin-bottom: 10px;
+    font-family: "Arial Narrow", sans-serif;
+}
+
+.mapUbicacion {
+    width: 95%;
+    height: 250px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: rgba(0,0,0,0.35) 0 5px 15px;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+.mapUbicacion iframe {
+    width: 100%;
+    height: 100%; /* Ajusta la altura según sea necesario */
+    border: none;
+    border-radius: 15px;
+    position: relative;
+    top: 0;
+    left: 0;
+
+}
+
+
+
 

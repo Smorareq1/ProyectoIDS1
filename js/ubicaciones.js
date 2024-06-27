@@ -1,4 +1,4 @@
-(function(){
+(function () {
 
     'use strict';
 
@@ -10,7 +10,7 @@
         layoutMode: 'fitRows'
     });
 
-    $('ul.filters > li').on('click', function(e){
+    $('ul.filters > li').on('click', function (e) {
 
         e.preventDefault();
 
@@ -23,16 +23,20 @@
 
     });
 
-    $('.card').mouseenter(function(){
+    $('.card').mouseenter(function () {
 
         $(this).find('.card-overlay').css({'top': '-100%'});
-        $(this).find('.card-hover').css({'top':'0'});
+        $(this).find('.card-hover').css({'top': '0'});
 
-    }).mouseleave(function(){
+    }).mouseleave(function () {
 
         $(this).find('.card-overlay').css({'top': '0'});
-        $(this).find('.card-hover').css({'top':'100%'});
+        $(this).find('.card-hover').css({'top': '100%'});
 
     });
 
 })(jQuery);
+
+
+
+

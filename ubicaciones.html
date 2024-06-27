@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Importancia del reciclaje - BioWave</title>
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
     <!-- BootStrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -54,12 +58,13 @@
                     <li data-filter=".Electrónicos"><a href="#!">Electrónicos</a></li>
                     <li data-filter=".Papel"><a href="#!">Papel</a></li>
                     <li data-filter=".Metal"><a href="#!">Metal</a></li>
+                    <li data-filter=".Todo"><a href="#!">Todo</a></li>
                 </ul>
 
                 <div class="ubicaciones">
                     <div class="row">
-
-                        <div class="col-lg-4 item Metal">
+                        <!-- Ubicacion 1 -->
+                        <div class="col-lg-4 item Electrónicos Papel Metal Todo">
                             <!-- Ubicacion 1 -->
                             <div class="card">
                                 <div class="card-head">
@@ -67,123 +72,138 @@
                                     <div class="card-overlay"><h2>PriceSmart</h2></div>
 
                                     <div class="card-hover">
-                                        <h4>Texto</h4>
-                                        <p>Mucho texto</p>
+                                        <h4>Descripción</h4>
+                                        <p>Productos PET postconsumo,
+                                            de cualquier tamaño, como botellas de bebidas o envases plásticos.</p>
                                     </div>
                                 </div>
 
                                 <div class="card-body text-center">
-                                    <h5 class="title">Ubicacion 1</h5>
-                                    <button class="btn btn-lg card-btn">Mas informacion</button>
+                                    <h5 class="title">PriceSmart</h5>
+                                    <button
+                                            class="btn btn-lg card-btn"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#mi-modal-1"
+                                    >
+                                        Más información
+                                    </button>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Modal 1 -->
+                        <div
+                                class="modal fade"
+                                id="mi-modal-1"
+                                tabindex="-1"
+                                aria-labelledby="label-modal-1"
+                                aria-hidden="true"
+                        >
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">PriceSmart</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul class="informacionImportante">
+                                            <li>Horario: Lunes a Domingo 9:00 A.M. –  8:30 P.M.</li>
+                                            <li>Dirección: 22 Avenida 18-46, Cdad. de Guatemala <br>
+                                                01010 Y 5a Avenida 3-05, Mixco</li>
+                                            <li>Correo: riskmanagement@pricesmart.com</li>
+                                        </ul>
 
+
+                                            <div class="mapUbicacion">
+                                                <!-- Aquí va el iframe del mapa con un ID -->
+                                                <iframe class="mapaGoogle" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61770.36052649491!2d-90.6265202783203!3d14.6191437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a1af6f5166ef%3A0xd5bc963cf66f1f!2sPricesmart%20Miraflores!5e0!3m2!1ses!2sgt!4v1719453761590!5m2!1ses!2sgt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                                        allowfullscreen="" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </div>
+                                    </div>
+
+                                    <div class="modal-footer text-center">
+                                        <a href="https://www.instagram.com/pricesmartgt/p/C8nhoEdMZNG/" target="_blank" class="icons" rel="noreferrer">
+                                            <i class="uil uil-instagram"></i>
+                                        </a>
+                                        <a href="https://www.pricesmart.com/site/sv/es" target="_blank" class="icons" rel="noreferrer">
+                                            <i class="uil uil-globe"></i>
+                                        </a>
+                                        <a href="https://www.facebook.com/PriceSmartGuatemala" target="_blank" class="icons" rel="noreferrer">
+                                            <i class="uil uil-facebook"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="col-lg-4 item">
+                        <!-- Ubicacion 2 -->
+                        <div class="col-lg-4 item Electrónicos">
                             <!-- Ubicacion 1 -->
                             <div class="card">
                                 <div class="card-head">
-                                    <img src="img/priceSmart.png" alt="" class="img-fluid card-img">
-                                    <div class="card-overlay"><h2>PriceSmart</h2></div>
+                                    <img src="img/centroElectronicoDeReciclaje.jpg" alt="" class="img-fluid card-img">
+                                    <div class="card-overlay"><h2>Centro Electronico De Reciclaje</h2></div>
 
                                     <div class="card-hover">
-                                        <h4>Texto</h4>
-                                        <p>Mucho texto</p>
+                                        <h4>Centro Electronico De Reciclaje</h4>
+                                        <p>Reciclamos todo su material electronico de computacion,
+                                            recuerda no lo tires, nosotros te lo compramos</p>
                                     </div>
                                 </div>
 
                                 <div class="card-body text-center">
-                                    <h5 class="title">Ubicacion 1</h5>
-                                    <button class="btn btn-lg card-btn">Mas informacion</button>
+                                    <h5 class="title">Centro Electronico De Reciclaje</h5>
+                                    <button
+                                            class="btn btn-lg card-btn"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#mi-modal-2"
+                                    >
+                                        Más información
+                                    </button>
                                 </div>
                             </div>
-
                         </div>
+                        <!-- Modal 2 -->
+                        <div
+                                class="modal fade"
+                                id="mi-modal-2"
+                                tabindex="-1"
+                                aria-labelledby="label-modal-1"
+                                aria-hidden="true"
+                        >
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Centro Electronico De Reciclaje</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul class="informacionImportante">
+                                            <li>Horario: Lunes a Sabado de 9:00A.M. - 6:00A.M.</li>
+                                            <li>Centro Comercial San Cristobal, Local 46,
+                                                frente a los Puentes a la par de la iglesia Mormona, Guate</li>
+                                            <li>Correo: centroelectronicodereciclaje@gmail.com</li>
+                                            <li>Teléfono: 46128366</li>
+                                        </ul>
 
-                        <div class="col-lg-4 item">
-                            <!-- Ubicacion 1 -->
-                            <div class="card">
-                                <div class="card-head">
-                                    <img src="img/priceSmart.png" alt="" class="img-fluid card-img">
-                                    <div class="card-overlay"><h2>PriceSmart</h2></div>
 
-                                    <div class="card-hover">
-                                        <h4>Texto</h4>
-                                        <p>Mucho texto</p>
+                                        <div class="mapUbicacion">
+                                            <!-- Aquí va el iframe del mapa con un ID -->
+                                            <iframe class="mapaGoogle" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.9497944075915!2d-90.5839952248938!3d14.601935885884552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a0f2e43e5f1f%3A0xe555232c6978aa47!2sPlaza%20San%20Crist%C3%B3bal!5e0!3m2!1ses!2sgt!4v1719458592444!5m2!1ses!2sgt"
+                                                    allowfullscreen="" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer text-center">
+                                        <a href="https://www.facebook.com/CentroElectronicoDeReciclaje/?locale=es_LA" target="_blank" class="icons" rel="noreferrer">
+                                            <i class="uil uil-facebook"></i>
+                                        </a>
                                     </div>
                                 </div>
-
-                                <div class="card-body text-center">
-                                    <h5 class="title">Ubicacion 1</h5>
-                                    <button class="btn btn-lg card-btn">Mas informacion</button>
-                                </div>
                             </div>
-
                         </div>
 
-                        <div class="col-lg-4 item">
-                            <!-- Ubicacion 1 -->
-                            <div class="card">
-                                <div class="card-head">
-                                    <img src="img/priceSmart.png" alt="" class="img-fluid card-img">
-                                    <div class="card-overlay"><h2>PriceSmart</h2></div>
 
-                                    <div class="card-hover">
-                                        <h4>Texto</h4>
-                                        <p>Mucho texto</p>
-                                    </div>
-                                </div>
 
-                                <div class="card-body text-center">
-                                    <h5 class="title">Ubicacion 1</h5>
-                                    <button class="btn btn-lg card-btn">Mas informacion</button>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-4 item">
-                            <!-- Ubicacion 1 -->
-                            <div class="card">
-                                <div class="card-head">
-                                    <img src="img/priceSmart.png" alt="" class="img-fluid card-img">
-                                    <div class="card-overlay"><h2>PriceSmart</h2></div>
-
-                                    <div class="card-hover">
-                                        <h4>Texto</h4>
-                                        <p>Mucho texto</p>
-                                    </div>
-                                </div>
-
-                                <div class="card-body text-center">
-                                    <h5 class="title">Ubicacion 1</h5>
-                                    <button class="btn btn-lg card-btn">Mas informacion</button>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-4 item">
-                            <!-- Ubicacion 1 -->
-                            <div class="card">
-                                <div class="card-head">
-                                    <img src="img/priceSmart.png" alt="" class="img-fluid card-img">
-                                    <div class="card-overlay"><h2>PriceSmart</h2></div>
-
-                                    <div class="card-hover">
-                                        <h4>Texto</h4>
-                                        <p>Mucho texto</p>
-                                    </div>
-                                </div>
-
-                                <div class="card-body text-center">
-                                    <h5 class="title">Ubicacion 1</h5>
-                                    <button class="btn btn-lg card-btn">Mas informacion</button>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
 
                 </div>
