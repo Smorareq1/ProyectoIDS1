@@ -111,35 +111,42 @@ function mostrarUbicacion(opcion) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-//Aviso de envio de formulario
+(function(){
+    emailjs.init("biRuNLTmnlWiifnIz");
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtener referencias a los elementos del formulario
     const form = document.getElementById('sugerenciasForm');
     const btnEnviar = document.getElementById('btnSugerencias');
     const nombreInput = document.getElementById('NombreSugerencias');
     const correoInput = document.getElementById('CorreoSugerencias');
     const descripcionInput = document.getElementById('DescripcionSugerencias');
 
-    // Agregar evento clic al botón Enviar
     btnEnviar.addEventListener('click', function (event) {
-        // Prevenir el comportamiento por defecto del botón (enviar formulario)
         event.preventDefault();
 
-        // Obtener los valores de los campos del formulario
         const nombre = nombreInput.value;
         const correo = correoInput.value;
         const descripcion = descripcionInput.value;
 
-        // Ejemplo de acción: mostrar los valores en forma de alerta
-        alert(`Siguientes datos enviados para revisión:\nNombre: ${nombre}\nCorreo: ${correo}\nDescripción: ${descripcion}`);
-        NombreSugerencias.value = '';
-        CorreoSugerencias.value = '';
-        DescripcionSugerencias.value = '';
-
-        // Aquí puedes realizar las acciones que desees con la información capturada
-        // Por ejemplo, puedes enviarla a un servidor mediante una solicitud HTTP (Ajax o Fetch).
+        emailjs.send("service_1szo66j", "template_ly9t5x6", {
+            nombre: nombre,
+            correo: correo,
+            descripcion: descripcion
+        })
+            .then((response) => {
+                alert('Correo enviado!');
+                nombreInput.value = '';
+                correoInput.value = '';
+                descripcionInput.value = '';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     });
 });
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
